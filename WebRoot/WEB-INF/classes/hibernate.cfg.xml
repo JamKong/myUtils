@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- 配置MySQL连接属性 -->
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://localhost:3306/hibernate_test
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+		<!-- 在控制台显示SQL语句 -->
+		<property name="show_sql">true</property>
+		<!-- 设置SQL输出的时候进行格式化 -->
+		<property name="format_sql">true</property>
+		<!-- 根据需要自动生成、更新数据表 -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- 注册所有ORM映射文件 -->
+		<mapping resource="cn/hibernate/domain/Customer.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

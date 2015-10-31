@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="czk-tools-1.0"
+  id="myeclipse.1425653730009"
+  context-root="/czk-tools-1.0"
+  j2ee-spec="5.0"
+  archive="czk-tools-1.0.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

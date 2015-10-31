@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<c3p0-config>
+	<default-config> 
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/db_user</property>
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="user">root</property>
+		<property name="password"></property>
+		
+		<property name="acquireIncrement">3</property>
+		<property name="initialPoolSize">10</property>
+		<property name="minPoolSize">2</property>
+		<property name="maxPoolSize">10</property>
+	</default-config>
+	<!-- 因为JdbcUtils.java中只设置ComboPooledDataSource对象的构造函数为默认构造函数。
+		也就是没有设置参数值。所以，下面的命名配置信息是没办法使用的。
+		如果要使用相应的命名配置信息，那么可以修改：
+		 	1. JdbcUtils.java中的：
+			   ComboPooledDataSource dataSource = new ComboPooledDataSource("mysql");
+			2. 使用JdbcUtils.java中的方法，(推荐！！)
+				getConnection(String dataSourceParameter)中的
+				dataSourceParameter参数。
+				其中dataSourceParameter跟下面的命名参数中的：<name-config name="mysql">中的
+				"mysql"对应 
+	-->
+	<named-config name="mysql"> 
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/db_goods</property>
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="user">root</property>
+		<property name="password"></property>
+		
+		<property name="acquireIncrement">3</property>
+		<property name="initialPoolSize">10</property>
+		<property name="minPoolSize">2</property>
+		<property name="maxPoolSize">10</property>
+	</named-config>
+</c3p0-config>
